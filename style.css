@@ -1,0 +1,248 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+s#background-image {
+    margin-top: 180px;
+    position: absolute;
+    top: 0; /* Ensure it's positioned at the top of the screen */
+    left: 0; /* Ensure it's positioned at the left edge */
+    width: 100%; /* Take up the full width */
+    height: 100%; /* Take up the full height of the viewport */
+    background-image: url("https://img.pikbest.com/png-images/20240706/colorful-brush-paint-swirl-abstract-splash-wave-isolated-on-transparent-background_10654206.png!bw700");
+    background-size: cover; /* Ensure the image covers the container without stretching */
+    background-position: center; /* Center the image within the container */
+    background-repeat: no-repeat; /* Ensure the image does not repeat */
+    z-index: -1; /* Keeps the image behind other content */
+    filter: grayscale(34%) sepia(44%) blur(3px) hue-rotate(37deg) saturate(80%) contrast(154%);
+    -webkit-filter: grayscale(34%) sepia(44%) blur(3px) hue-rotate(37deg) saturate(80%) contrast(154%);
+    -moz-filter: grayscale(34%) sepia(44%) blur(3px) hue-rotate(37deg) saturate(80%) contrast(154%);
+}
+
+
+#birthday-post {
+    z-index: 1; /* Ensures the content is above the image */
+    text-align: center;
+    position: relative; /* To ensure it stays above the image */
+}
+
+.happy-birthday {
+    margin-top: 20px;
+    font-family: 'Oranienbaum', sans-serif;
+    font-size: 3rem;
+    color: #b87a7a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.birthday-info p {
+    margin: 5px 0;
+    font-family: 'Oranienbaum', sans-serif;
+    color: #b87a7a;
+    margin-top: -20px;
+}
+
+.birthday-info .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: -15px;
+}
+
+.birthday-info .department,
+.birthday-info .year-level {
+    font-family: 'TT Norms Pro', sans-serif;
+    font-size: 1.1rem;
+    color: #b87a7a;
+    margin: 2px;
+}
+
+.department-year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.card {
+    border-radius: 26px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.ss-container {
+    background-image: url(bgcover.PNG);
+    background-size: cover; /* Ensure the image covers the container without stretching */
+    background-position: center; /* Center the image within the container */
+    background-repeat: no-repeat; /* Ensure the image does not repeat */
+    z-index: -1; /* Keeps the image behind other content */
+    display: flex;               /* Enable Flexbox layout */
+    justify-content: center;     /* Center items horizontally */
+    align-items: center;         /* Center items vertically */
+    flex-direction: column;      /* Stack children vertically */
+    width: 500px;
+    height: auto;                /* Adjust height automatically based on content */
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 1px 0px 20px rgb(179, 179, 179);
+    text-align: center;          /* Ensure text is centered */
+}
+
+
+.ques-container{
+    width: 300px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    box-shadow: 1px 0px 20px rgb(179, 179, 179);
+}
+input.form-control {
+    border-radius: 25px; /* adjust roundness, mas malaki = mas bilog */
+}
+
+ 
+input:focus {
+    box-shadow: 0 0 5px #f8b500;
+    border-color: #f8b500;
+}
+
+.profile-container {
+    width: 250px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    height: 330px;
+    box-shadow: 1px 0px 20px rgb(82, 82, 82);
+}
+
+.username-container {
+    font-size: small;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+    z-index: 1;
+    height: 30px;
+    position: absolute;
+    margin-left: 35px;
+    margin-top: -4px;
+}
+
+.profile-photo-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+#profile-photo {
+    left: 1px;
+    border: 2px solid #0aca70;
+    padding: 3px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin-top: -6px;
+   
+}
+
+.heart-logo {
+    width: 30px;
+    padding: 3px;
+    margin-right: 400px;
+    margin-top: 232px;
+}
+
+.pc-container {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-bottom: 30px;
+    z-index: 1;
+    flex-grow: 1;
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/a/aa/Makima.png);
+    background-size: cover;
+    background-position: center;
+}
+.bday-container{
+    width: 370px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    
+}
+
+h2, p {
+    color: #333;
+}
+
+.buttons {
+    
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.buttons .btn {
+    position: absolute;
+    
+}
+button.btn-primary {
+    border-radius: 25px;
+}
+
+
+#like-btn, #share-btn {
+    color: #333;
+}
+
+#like-btn {
+    font-size: 1.5rem;
+    color: #f44336;
+    margin-right: 220px;
+    margin-top: 215px;
+}
+
+#share-btn {
+    margin-right: -250px;
+    margin-top: 215px;
+    color: #008CFF;
+}
+
+.bi-heart, .bi-share {
+    margin-right: 5px;
+    font-size: 1.5rem;
+}

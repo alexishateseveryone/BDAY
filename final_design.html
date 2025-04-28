@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Post Generator - Final Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Local Font Import -->
+    <style>
+        @font-face {
+            font-family: 'Oranienbaum';
+            src: url('fonts/Oranienbaum-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Apply Oranienbaum font to all text */
+        body, .happy-birthday, .birthday-info, .birthday-info p, .name, .department, .year-level, .profile-container {
+            font-family: 'Oranienbaum', sans-serif;
+        }
+
+        /* Make the screenshot button centered and positioned outside the profile-container in mobile view */
+        .screenshot-btn-container {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .screenshot-btn-container {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100 bg-light">
+    <div class="ss-container position-relative">
+        <div class="bday-container">
+            <h2 class="mb-3 happy-birthday">HAPPY BIRTHDAY</h2>
+            <div class="birthday-info">
+                <p class="name" id="user-name"></p>
+                <div class="department-year">
+                    <p class="department" id="user-department"></p>
+                    <p class="year-level" id="user-year"></p>
+                </div>
+            </div>
+        </div>
+        <div id="background-image"></div>
+
+        <div class="profile-container">
+            <div class="profile-photo-container">
+                <div class="username-container">
+                    <p>asiatechBSIT/CS</p>
+                </div>
+                <img id="profile-photo" src="pic.jpg" alt="Profile Photo" class="rounded-circle">
+            </div>
+            <div class="pc-container"></div>
+            <p id="post-content"></p>
+            <img src="https://media.istockphoto.com/id/1903985199/vector/heart-flat-icon.jpg?s=612x612&w=0&k=20&c=FOAQ1kofne38dLzm6C6vBE39nY9fynVBpQb7UcDW7gk=" alt="" class="heart-logo">
+        </div>
+
+        <!-- Screenshot Button Container -->
+        
+    </div> <!-- End of ss-container -->
+    <div class="screenshot-btn-container">
+        <button id="screenshot-btn" class="btn btn-primary mt-3">Take Screenshot</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+    <script>
+        // Load user data
+        window.onload = function() {
+            const name = localStorage.getItem('userName');
+            const department = localStorage.getItem('userDepartment');
+            const year = localStorage.getItem('userYear');
+            const photo = localStorage.getItem('userPhoto');
+
+            document.getElementById('user-name').innerText = name || 'No Name';
+            document.getElementById('user-department').innerText = department || 'No Department';
+            document.getElementById('user-year').innerText = year || 'No Year';
+
+            // Set the uploaded photo as background of .pc-container
+            const pcContainer = document.querySelector('.pc-container');
+            pcContainer.style.backgroundImage = `url(${photo})`;
+            pcContainer.style.backgroundSize = 'cover';
+            pcContainer.style.backgroundPosition = 'center';
+        };
+
+        // Screenshot functionality using dom-to-image
+        document.getElementById('screenshot-btn').addEventListener('click', function() {
+            const node = document.querySelector('.ss-container'); // Capture only the content inside ss-container
+
+            // Use dom-to-image to generate the image and allow download
+            domtoimage.toPng(node)
+                .then(function(dataUrl) {
+                    const link = document.createElement('a');
+                    link.href = dataUrl; // The generated image URL
+                    link.download = 'birthday_post_screenshot.png'; // Set the download name
+                    link.click(); // Trigger the download
+                })
+                .catch(function(error) {
+                    console.error('Error while capturing screenshot:', error);
+                });
+        });
+    </script>
+</body>
+</html>
