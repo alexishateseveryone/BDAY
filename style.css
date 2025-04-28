@@ -98,7 +98,7 @@ s#background-image {
     justify-content: center;     /* Center items horizontally */
     align-items: center;         /* Center items vertically */
     flex-direction: column;      /* Stack children vertically */
-    width: 500px;
+    width: 550px;
     height: auto;                /* Adjust height automatically based on content */
     border-radius: 25px;
     background-color: rgb(255, 255, 255);
@@ -111,15 +111,17 @@ s#background-image {
 
 
 .ques-container{
-    width: 300px;
+    width: 35-px;
     border-radius: 25px;
     background-color: rgb(255, 255, 255);
     padding: 20px;
     position: relative;
     z-index: 1;
     height: auto;
-    box-shadow: 1px 0px 20px rgb(179, 179, 179);
+    box-shadow: 1px 0px 20px rgb(37, 37, 37);
 }
+
+
 input.form-control {
     border-radius: 25px; /* adjust roundness, mas malaki = mas bilog */
 }
@@ -140,6 +142,35 @@ input:focus {
     height: 330px;
     box-shadow: 1px 0px 20px rgb(82, 82, 82);
 }
+.balloon-sticker {
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    width: 100px;
+    height: auto;
+    z-index: 5;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.confetti-sticker {
+    position: absolute;
+    right: 40px;
+    width: 80px;
+    height: auto;
+    z-index: 5;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.heartheart-sticker {
+    position: absolute;
+    bottom: 70px;
+    left: 155px;
+    width: 50px;
+    height: auto;
+    z-index: 5;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+}
+
 
 .username-container {
     font-size: small;
@@ -172,11 +203,14 @@ input:focus {
 }
 
 .heart-logo {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
     width: 30px;
+    height: auto;
     padding: 3px;
-    margin-right: 400px;
-    margin-top: 232px;
 }
+
 
 .pc-container {
     border-radius: 10px;
