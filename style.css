@@ -118,7 +118,7 @@ s#background-image {
     position: relative;
     z-index: 1;
     height: auto;
-    box-shadow: 1px 0px 20px rgb(37, 37, 37);
+    box-shadow: 1px 0px 10px rgb(218, 218, 218);
 }
 
 
@@ -229,13 +229,14 @@ input:focus {
     background-position: center;
 }
 .bday-container{
-    width: 370px;
+    width: auto;
     border-radius: 25px;
     background-color: rgb(255, 255, 255);
     padding: 20px;
     position: relative;
     z-index: 1;
     height: auto;
+    
     
 }
 
